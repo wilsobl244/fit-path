@@ -1,0 +1,14 @@
+FITPATH - GUIDED WORKOUT EDITION
+
+1. Extract the ZIP into a new folder.
+2. In the folder, run: npm install
+3. Create a file named .env (use .env.example as a template).
+4. Paste your PRIVATE Groq API key into .env.
+5. Run: node server.js
+6. Visit http://localhost:3000
+
+NEW: Four-step onboarding, optional height/weight and specific goal, saved AI set/rep guidance in Log, previous logged performance, and mobile-friendly guidance.
+
+NOTE: AI needs a working Groq API key and internet. If AI is unavailable, the coach page still offers a starter plan. The workout data is stored in the browser on that device, not synced to an account.
+
+IMPORTANT: Your uploaded .env was intentionally excluded from this ZIP because it contains secrets. Do not share or commit your .env file. Rotate any previously exposed API keys.
