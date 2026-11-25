@@ -1,0 +1,209 @@
+
+/* =========================================
+   FITPATH - FINAL CONSISTENCY FIX
+   ========================================= */
+
+:root {
+    --brand-text: #252838;
+    --brand-accent: #56598f;
+    --check-bg: #ffffff;
+    --check-border: #9296ad;
+    --check-accent: #56598f;
+    --check-mark: #ffffff;
+}
+
+body:not(.light-theme):not(.fp-auth),
+html[data-fp-theme="dark"] body,
+body[data-theme="dark"],
+html[data-theme="dark"] body {
+    --brand-text: #eeeff7;
+    --brand-accent: #b5b8eb;
+    --check-bg: #252833;
+    --check-border: #777d94;
+    --check-accent: #b5b8eb;
+    --check-mark: #222536;
+}
+
+body.fp-auth {
+    --brand-text: var(--a-text, #252838);
+    --brand-accent: var(--a-accent, #56598f);
+}
+
+/* Consistent FitPath branding */
+
+body .navbar a.logo,
+body .fp-header a.fp-brand,
+body a.logo,
+body a.fp-brand {
+    font-family: "Outfit", Arial, sans-serif !important;
+    font-size: 30px !important;
+    font-weight: 800 !important;
+    letter-spacing: -1.25px !important;
+    line-height: 1 !important;
+    color: var(--brand-text) !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    font-style: normal !important;
+    flex-shrink: 0;
+}
+
+body a.logo span,
+body a.fp-brand span {
+    font: inherit !important;
+    letter-spacing: inherit !important;
+    color: var(--brand-accent) !important;
+}
+
+/* Proper workout completion checkbox */
+
+html body .set-row input[type="checkbox"] {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+
+    display: inline-grid !important;
+    place-items: center !important;
+
+    box-sizing: border-box !important;
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    min-height: 28px !important;
+    max-width: 28px !important;
+    max-height: 28px !important;
+
+    padding: 0 !important;
+    margin: auto !important;
+
+    border: 1.5px solid var(--check-border) !important;
+    border-radius: 7px !important;
+    background: var(--check-bg) !important;
+
+    cursor: pointer !important;
+    box-shadow: none !important;
+    justify-self: center !important;
+
+    transition:
+        background 160ms ease,
+        border-color 160ms ease,
+        transform 160ms ease;
+}
+
+html body .set-row input[type="checkbox"]::before,
+html body .set-row input[type="checkbox"]::after {
+    content: none !important;
+}
+
+/* Checked state with embedded SVG checkmark */
+
+html body .set-row input[type="checkbox"]:checked {
+    background-color: var(--check-accent) !important;
+    border-color: var(--check-accent) !important;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m5 12 4 4L19 6' fill='none' stroke='%23ffffff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+
+    background-size: 20px 20px !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+html body:not(.light-theme) .set-row input[type="checkbox"]:checked {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m5 12 4 4L19 6' fill='none' stroke='%23222536' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+}
+
+html body .set-row input[type="checkbox"]:hover {
+    border-color: var(--check-accent) !important;
+    transform: scale(1.05);
+}
+
+html body .set-row input[type="checkbox"]:active {
+    transform: scale(.92);
+}
+
+html body .set-row input[type="checkbox"]:focus-visible {
+    outline: 3px solid var(--check-accent) !important;
+    outline-offset: 3px !important;
+}
+
+/* Completed workout row */
+
+html body .set-row.completed,
+html body .set-row:has(input[type="checkbox"]:checked) {
+    background: color-mix(
+        in srgb,
+        var(--check-accent) 12%,
+        var(--check-bg)
+    ) !important;
+    box-shadow: none !important;
+}
+
+/* Remove excessive focus outlines around entire rows */
+
+html body .set-row:focus-within {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Review page actions */
+
+body .page-actions:has(#saveBtn) {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    gap: 14px !important;
+    margin-top: 28px !important;
+}
+
+body .page-actions:has(#saveBtn) > * {
+    min-height: 46px !important;
+}
+
+/* Mobile refinements */
+
+@media (max-width: 760px) {
+    body a.logo,
+    body a.fp-brand,
+    body .navbar a.logo,
+    body .fp-header a.fp-brand {
+        font-size: 26px !important;
+        letter-spacing: -1px !important;
+    }
+
+    body .page-actions:has(#saveBtn) {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+
+    body .page-actions:has(#saveBtn) > * {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+    }
+
+    html body .set-row input[type="checkbox"] {
+        width: 30px !important;
+        height: 30px !important;
+        min-width: 30px !important;
+        min-height: 30px !important;
+        max-width: 30px !important;
+        max-height: 30px !important;
+    }
+
+    body .set-row {
+        gap: 8px !important;
+    }
+
+    body .set-row input[type="number"] {
+        min-width: 0 !important;
+        width: 100% !important;
+        font-size: 16px !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body .set-row input[type="checkbox"] {
+        transition: none !important;
+        transform: none !important;
+    }
+}

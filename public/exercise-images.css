@@ -1,0 +1,323 @@
+
+/* FITPATH EXERCISE IMAGE SYSTEM */
+
+body .exercise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+body .exercise-card {
+    display: flex;
+    flex-direction: column;
+    padding: 16px !important;
+    gap: 14px !important;
+    border-radius: 20px;
+    min-width: 0;
+    overflow: hidden;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+body .exercise-card:hover {
+    border-color: var(--focus) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,.07) !important;
+}
+
+body .exercise-card h2 {
+    font-size: clamp(18px, 1.5vw, 23px);
+    line-height: 1.3;
+    margin: 2px 0 0;
+    letter-spacing: -.025em;
+}
+
+body .exercise-card p {
+    line-height: 1.65;
+    font-size: 14px;
+}
+
+body .exercise-photo {
+    display: block !important;
+    position: relative;
+    width: 100%;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+body .exercise-image-frame {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 4 / 3;
+    background: #f7f7fa;
+    border: 1px solid var(--edge);
+    border-radius: 14px;
+    overflow: hidden;
+    padding: 14px;
+}
+
+body .exercise-image-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    transition: transform .25s ease;
+}
+
+body .exercise-card:hover .exercise-image-frame img {
+    transform: scale(1.035);
+}
+
+body .exercise-image-frame img[hidden],
+body .exercise-image-fallback[hidden] {
+    display: none !important;
+}
+
+body .exercise-image-fallback {
+    color: #626879;
+    font-size: 14px;
+    text-align: center;
+}
+
+body .exercise-image-caption {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+    padding-top: 12px;
+}
+
+body .exercise-group-label,
+body .exercise-level-label {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 11px;
+    border-radius: 7px;
+    font-size: 11px !important;
+    font-weight: 650;
+    background: var(--mint);
+    color: var(--green);
+}
+
+body .exercise-level-label {
+    background: var(--cream);
+    color: var(--text);
+}
+
+body .exercise-card .exercise-meta {
+    font-size: 12px;
+    color: var(--text) !important;
+}
+
+body .exercise-card .guide-button {
+    width: 100%;
+    min-height: 44px;
+    margin-top: auto !important;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+body .exercise-card .exercise-action {
+    width: 100%;
+    min-height: 46px;
+    margin-top: 0 !important;
+    border-radius: 10px;
+}
+
+body .exercise-card[data-chosen="true"] {
+    border-color: var(--focus) !important;
+}
+
+body .exercise-card[data-chosen="true"] .exercise-action {
+    background: var(--mint) !important;
+    color: var(--navy) !important;
+}
+
+/* EXERCISE INSTRUCTION DIALOG */
+
+body .guide-dialog {
+    width: min(580px, calc(100% - 24px));
+    max-height: 88dvh;
+    padding: 24px;
+    border-radius: 22px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+body .guide-dialog .exercise-photo {
+    margin-top: 16px !important;
+    clear: both;
+}
+
+body .guide-dialog .exercise-image-frame {
+    aspect-ratio: 16 / 10;
+    max-height: 300px;
+}
+
+body .guide-dialog h2 {
+    font-size: 26px;
+    margin: 18px 0 8px;
+}
+
+body .guide-dialog h3 {
+    font-size: 18px;
+    margin-top: 24px;
+}
+
+body .guide-dialog ol {
+    list-style: none;
+    counter-reset: technique;
+    padding: 0;
+}
+
+body .guide-dialog ol li {
+    counter-increment: technique;
+    position: relative;
+    padding: 14px 14px 14px 54px;
+    margin: 10px 0;
+    background: var(--cream);
+    border: 1px solid var(--edge);
+    border-radius: 12px;
+    color: var(--navy);
+    line-height: 1.6;
+}
+
+body .guide-dialog ol li::before {
+    content: counter(technique);
+    position: absolute;
+    left: 12px;
+    top: 13px;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    background: var(--mint);
+    color: var(--green);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+body .guide-dialog > a {
+    display: block;
+    padding: 14px;
+    background: var(--mint);
+    color: var(--green);
+    border-radius: 12px;
+    line-height: 1.5;
+    text-decoration: underline;
+}
+
+body .guide-dialog .guide-close {
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 50%;
+}
+
+/* WORKOUT TRACKER */
+
+body .log-card .exercise-photo {
+    max-width: 300px;
+}
+
+body .log-card .exercise-image-frame {
+    aspect-ratio: 4 / 3;
+}
+
+/* DARK MODE */
+
+body:not(.light-theme) .exercise-image-frame {
+    background: #e5e6eb;
+    border-color: #555967;
+}
+
+body:not(.light-theme) .exercise-image-frame img {
+    opacity: .94;
+}
+
+/* TABLET */
+
+@media (max-width: 1150px) {
+    body .exercise-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+    body .exercise-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    body .exercise-card {
+        padding: 12px !important;
+        gap: 10px !important;
+        border-radius: 16px;
+    }
+
+    body .exercise-card h2 {
+        font-size: 17px;
+    }
+
+    body .exercise-card p {
+        font-size: 13px;
+    }
+
+    body .exercise-image-frame {
+        aspect-ratio: 1 / 1;
+        padding: 8px;
+    }
+
+    body .exercise-image-caption {
+        justify-content: flex-start;
+    }
+
+    body .exercise-card button {
+        white-space: normal;
+        line-height: 1.4;
+        padding: 10px;
+    }
+
+    body .guide-dialog {
+        padding: 16px;
+        max-height: 85dvh;
+    }
+
+    body .log-card .exercise-photo {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body .exercise-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body .exercise-image-frame {
+        aspect-ratio: 16 / 10;
+    }
+
+    body .exercise-card {
+        padding: 14px !important;
+    }
+
+    body .exercise-card h2 {
+        font-size: 21px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body .exercise-card,
+    body .exercise-image-frame img {
+        transition: none !important;
+        transform: none !important;
+    }
+}

@@ -1,0 +1,436 @@
+﻿/* FITPATH - NEUTRAL DESIGN SYSTEM */
+
+body.light-theme {
+    color-scheme: light;
+    --cream: #f2f3f7;
+    --panel: #fafafd;
+    --navy: #262938;
+    --text: #626879;
+    --green: #565b91;
+    --edge: #d8dbe5;
+    --mint: #e6e7f2;
+    --accent: #565b91;
+    --focus: #666ba6;
+    --button-text: #ffffff;
+    --button-hover: #484d80;
+    --input-bg: #ffffff;
+    --hero-bg: #e8e9f4;
+    --success-bg: #e3eee8;
+    --success-text: #345b48;
+}
+
+body:not(.light-theme) {
+    color-scheme: dark;
+    --cream: #191b22;
+    --panel: #252832;
+    --navy: #e8e9f0;
+    --text: #b4b8c8;
+    --green: #b4b8e8;
+    --edge: #414553;
+    --mint: #34384a;
+    --accent: #b4b8e8;
+    --focus: #b4b8e8;
+    --button-text: #25263c;
+    --button-hover: #c8cbef;
+    --input-bg: #20232c;
+    --hero-bg: #2e3244;
+    --success-bg: #2c4038;
+    --success-text: #b6dac6;
+}
+
+/* GLOBAL SURFACES */
+
+body {
+    background: var(--cream) !important;
+    color: var(--navy) !important;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body strong {
+    color: var(--navy);
+}
+
+body p,
+body .muted,
+body .page-intro,
+body .privacy-note,
+body .exercise-meta {
+    color: var(--text) !important;
+}
+
+body a,
+body summary,
+body .tag,
+body .eyebrow {
+    color: var(--green);
+}
+
+body .logo,
+body .logo span {
+    color: var(--navy) !important;
+}
+
+body .logo span {
+    color: var(--green) !important;
+}
+
+/* SIDEBAR AND NAVIGATION */
+
+body .navbar,
+body.workspace .navbar,
+body .mobile-tabs {
+    background: var(--panel) !important;
+    border-color: var(--edge) !important;
+}
+
+body.workspace .navbar nav a {
+    color: var(--text) !important;
+    transition: background .18s, color .18s;
+}
+
+body.workspace .navbar nav a:hover,
+body.workspace .navbar nav a[aria-current],
+body .mobile-tabs a[aria-current] {
+    background: var(--mint) !important;
+    color: var(--green) !important;
+}
+
+body.workspace .navbar nav a[aria-current] {
+    box-shadow: inset 3px 0 var(--green);
+}
+
+body .sidebar-note,
+body .theme-toggle,
+body .menu-toggle {
+    background: var(--mint) !important;
+    color: var(--navy) !important;
+    border-color: var(--edge) !important;
+}
+
+/* BUTTONS */
+
+body .primary-button,
+body .small-button,
+body .spotlight-action,
+body .nav-button,
+body .coach-submit,
+body .quick-start a,
+body .today-workout .primary-button,
+body .landing-actions .primary-button {
+    background: var(--accent) !important;
+    color: var(--button-text) !important;
+    border: 1px solid transparent !important;
+    box-shadow: none !important;
+    transition: background .18s, transform .18s;
+}
+
+body .primary-button:hover,
+body .small-button:hover,
+body .spotlight-action:hover,
+body .coach-submit:hover,
+body .today-workout .primary-button:hover {
+    background: var(--button-hover) !important;
+    color: var(--button-text) !important;
+}
+
+body .secondary-button,
+body .guide-button {
+    background: var(--panel) !important;
+    color: var(--navy) !important;
+    border: 1px solid var(--edge) !important;
+}
+
+body .secondary-button:hover,
+body .guide-button:hover {
+    background: var(--mint) !important;
+    border-color: var(--focus) !important;
+}
+
+body button:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+/* CARDS */
+
+body .day-card,
+body .exercise-card,
+body .log-card,
+body .guidance,
+body .metric-card,
+body .review-card,
+body .setup-card,
+body .coach-panel,
+body .stat-tile,
+body .quick-actions a,
+body .home-spotlight,
+body .fitpath-ai-overview,
+body .filters,
+body .workout-guide,
+body .plan-context,
+body .guide-dialog,
+body .feature-card,
+body .quick-start {
+    background: var(--panel) !important;
+    color: var(--navy) !important;
+    border-color: var(--edge) !important;
+    box-shadow: 0 3px 14px rgba(0,0,0,.035) !important;
+}
+
+/* DASHBOARD */
+
+body .today-workout {
+    background: var(--hero-bg) !important;
+    color: var(--navy) !important;
+    border: 1px solid var(--edge) !important;
+}
+
+body .today-workout h2,
+body .today-workout p,
+body .today-workout strong,
+body .today-workout span,
+body .today-workout .eyebrow,
+body .today-workout .subtle-link,
+body .today-workout .compact-progress {
+    color: var(--navy) !important;
+}
+
+body .home-symbol,
+body .coach-spark,
+body .fitpath-ai-overview .fitpath-ai-icon,
+body .exercise-visual,
+body .quick-start-icon,
+body .home-spotlight:before {
+    background: var(--mint) !important;
+    color: var(--green) !important;
+}
+
+/* WORKOUT CALENDAR */
+
+body .day-card {
+    border-top: 4px solid var(--day-accent, var(--edge)) !important;
+}
+
+body .day-card.rest-card {
+    background: var(--cream) !important;
+    border: 1px dashed var(--edge) !important;
+}
+
+body .week-day {
+    background: var(--panel) !important;
+    color: var(--navy) !important;
+    border-color: var(--edge) !important;
+}
+
+body .week-day.training {
+    background: var(--mint) !important;
+}
+
+body .week-day.is-today {
+    border: 2px solid var(--focus) !important;
+}
+
+body .fitpath-day-chip,
+body .status-pill {
+    background: var(--mint) !important;
+    color: var(--navy) !important;
+}
+
+body .fitpath-exercise-details summary,
+body .fitpath-focus-edit summary,
+body .exercise-help summary,
+body .fitpath-day-actions a:not(.primary-button):not(.small-button),
+body .home-section .section-heading a {
+    color: var(--green) !important;
+}
+
+/* FORMS AND SETUP */
+
+body input:not([type=checkbox]):not([type=radio]),
+body select,
+body textarea {
+    background: var(--input-bg) !important;
+    color: var(--navy) !important;
+    border: 1px solid var(--edge) !important;
+}
+
+body select option {
+    background: var(--input-bg) !important;
+    color: var(--navy) !important;
+}
+
+body input::placeholder,
+body textarea::placeholder {
+    color: var(--text) !important;
+    opacity: 1;
+}
+
+body input[type=checkbox],
+body input[type=radio] {
+    accent-color: var(--accent);
+}
+
+body .setup-card .option-card,
+body .setup-card .option-card:has(input:checked) {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+body .option-card span {
+    background: var(--panel) !important;
+    color: var(--navy) !important;
+    border: 1px solid var(--edge) !important;
+    box-shadow: none !important;
+}
+
+body .option-card input:checked + span {
+    background: var(--mint) !important;
+    color: var(--navy) !important;
+    border: 1px solid var(--focus) !important;
+    box-shadow: inset 0 0 0 1px var(--focus) !important;
+}
+
+body .option-card input:checked + span:after {
+    background: var(--accent) !important;
+    color: var(--button-text) !important;
+}
+
+/* ACCESSIBLE KEYBOARD FOCUS */
+
+body a:focus-visible,
+body button:focus-visible,
+body input:focus-visible,
+body select:focus-visible,
+body textarea:focus-visible,
+body summary:focus-visible,
+body .option-card input:focus-visible + span {
+    outline: 2px solid var(--focus) !important;
+    outline-offset: 4px !important;
+}
+
+body .setup-step h2[tabindex]:focus {
+    outline: none !important;
+}
+
+/* WORKOUT TRACKING AND PROGRESS */
+
+body .progress-track,
+body .progress-rail {
+    background: var(--edge) !important;
+}
+
+body .progress-fill,
+body .progress-rail > span,
+body .week-day .day-dot.active {
+    background: var(--accent) !important;
+}
+
+body .set-row {
+    background: var(--cream) !important;
+    color: var(--navy) !important;
+    border-color: var(--edge) !important;
+}
+
+body .set-row.completed {
+    background: var(--success-bg) !important;
+    color: var(--success-text) !important;
+}
+
+body .set-heading,
+body .set-recommendation,
+body .log-helper,
+body .empty-state,
+body .status:not(:empty),
+body #coachStatus:not(:empty) {
+    background: var(--mint) !important;
+    color: var(--navy) !important;
+    border-color: var(--edge) !important;
+}
+
+body .exercise-card[data-chosen=true] {
+    border-color: var(--focus) !important;
+}
+
+body .exercise-card[data-chosen=true] .exercise-action {
+    background: var(--mint) !important;
+    color: var(--navy) !important;
+}
+
+/* LANDING PAGE */
+
+body.landing-page .hero,
+body.landing-page .features,
+body.landing-page .about,
+body.landing-page .start {
+    background: var(--cream) !important;
+    color: var(--navy) !important;
+}
+
+body.landing-page .hero h1 span {
+    color: var(--green) !important;
+}
+
+body.landing-page .hero-card,
+body.landing-page footer {
+    background: var(--panel) !important;
+    color: var(--navy) !important;
+}
+
+body.landing-page .week-preview > div {
+    background: var(--mint) !important;
+    color: var(--navy) !important;
+}
+
+/* MOBILE AND ACCESSIBILITY */
+
+@media (max-width: 760px) {
+    body.workspace main {
+        padding: 20px 16px 40px !important;
+    }
+
+    body button,
+    body .primary-button,
+    body .secondary-button {
+        min-height: 44px;
+    }
+
+    body .fitpath-ai-overview {
+        flex-wrap: wrap;
+    }
+
+    body .fitpath-ai-overview .primary-button {
+        width: 100%;
+    }
+
+    body .mobile-tabs {
+        box-shadow: 0 -4px 20px rgba(0,0,0,.06);
+    }
+
+    body input,
+    body select,
+    body textarea {
+        font-size: 16px !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Final contrast and surface corrections. */
+body .summary-line, body .status, body .exercise-meta { color: var(--green) !important; }
+body.landing-page .hero-card { border: 1px solid var(--edge) !important; box-shadow: 0 12px 36px rgba(0,0,0,.09) !important; transform: none !important; }
+body .session-summary { background: var(--hero-bg) !important; color: var(--navy) !important; border: 1px solid var(--edge); }
+body .session-summary span, body .session-summary strong { color: var(--navy) !important; }
+body .guide-dialog::backdrop { background: #191b2299; }
+body .exercise-action { background: var(--accent) !important; color: var(--button-text) !important; border-color: var(--accent) !important; }
+body .exercise-card[data-chosen=true] .exercise-action { background: var(--mint) !important; color: var(--navy) !important; border-color: var(--edge) !important; }
+body .option-card input:checked + span { box-shadow: none !important; border: 2px solid var(--focus) !important; }
+body.workspace .navbar nav a[aria-current] { box-shadow: inset 3px 0 var(--green) !important; }

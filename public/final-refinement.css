@@ -1,0 +1,413 @@
+
+/* =========================================
+   FITPATH - FINAL INTERFACE REFINEMENT
+   ========================================= */
+
+:root {
+    --fp-bg: #f0f1f5;
+    --fp-card: #fafafc;
+    --fp-input: #e9eaf1;
+    --fp-border: #c5c8d6;
+    --fp-text: #262938;
+    --fp-muted: #606579;
+    --fp-accent: #565b91;
+    --fp-on-accent: #ffffff;
+    --fp-soft: #e2e4f1;
+    --fp-focus: #777db4;
+    --fp-grid: #d4d7e2;
+}
+
+html[data-fp-theme="dark"] {
+    color-scheme: dark;
+    --fp-bg: #191b23;
+    --fp-card: #242731;
+    --fp-input: #2c303c;
+    --fp-border: #62687a;
+    --fp-text: #ebedf5;
+    --fp-muted: #b7bdce;
+    --fp-accent: #b6baec;
+    --fp-on-accent: #242638;
+    --fp-soft: #35394d;
+    --fp-focus: #b6baec;
+    --fp-grid: #454959;
+}
+
+html[data-fp-theme="light"] {
+    color-scheme: light;
+}
+
+/* THEME CONSISTENCY */
+
+html[data-fp-theme] body {
+    --green: var(--fp-accent);
+    --mint: var(--fp-soft);
+    --navy: var(--fp-text);
+    --cream: var(--fp-input);
+    --edge: var(--fp-border);
+    --focus: var(--fp-focus);
+    --text: var(--fp-text);
+    --muted: var(--fp-muted);
+    --accent: var(--fp-accent);
+    background-color: var(--fp-bg);
+    color: var(--fp-text);
+}
+
+/* ALL INPUTS AND DROPDOWNS */
+
+html[data-fp-theme] body input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="hidden"]):not([type="submit"]):not([type="button"]),
+html[data-fp-theme] body select,
+html[data-fp-theme] body textarea {
+    background: var(--fp-input) !important;
+    color: var(--fp-text) !important;
+    border: 1px solid var(--fp-border) !important;
+    border-radius: 11px !important;
+    min-height: 46px;
+    padding: 12px 14px;
+    font-family: inherit;
+    box-shadow: none !important;
+    transition: border-color .18s, box-shadow .18s;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+html[data-fp-theme] body select {
+    cursor: pointer;
+    padding-right: 32px;
+}
+
+html[data-fp-theme] body select option {
+    background: var(--fp-card);
+    color: var(--fp-text);
+}
+
+html[data-fp-theme] body input::placeholder,
+html[data-fp-theme] body textarea::placeholder {
+    color: var(--fp-muted) !important;
+    opacity: 1;
+}
+
+html[data-fp-theme] body input:focus,
+html[data-fp-theme] body select:focus,
+html[data-fp-theme] body textarea:focus {
+    border-color: var(--fp-focus) !important;
+    box-shadow: 0 0 0 3px var(--fp-soft) !important;
+}
+
+html[data-fp-theme] body :focus-visible {
+    outline: 2px solid var(--fp-focus) !important;
+    outline-offset: 3px;
+}
+
+/* CHECKBOXES AND WORKOUT COMPLETION */
+
+body input[type="checkbox"],
+body input[type="radio"],
+body input[type="range"] {
+    accent-color: var(--fp-accent) !important;
+    cursor: pointer;
+}
+
+body input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+body .set-row,
+body .log-row {
+    border-radius: 12px;
+    transition: background-color .18s;
+}
+
+body .set-row:has(input[type="checkbox"]:checked),
+body .log-row:has(input[type="checkbox"]:checked) {
+    background: var(--fp-soft) !important;
+}
+
+/* BUTTON CONSISTENCY */
+
+body .btn-primary,
+body .primary-btn,
+body .button-primary,
+body .btn.primary,
+body .exercise-action:not(.secondary):not([aria-pressed="true"]) {
+    background: var(--fp-accent) !important;
+    color: var(--fp-on-accent) !important;
+    border-color: var(--fp-accent) !important;
+    box-shadow: none !important;
+}
+
+body button,
+body .btn {
+    font-family: inherit;
+    transition: background-color .18s, border-color .18s;
+}
+
+body button:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+/* EXERCISE LIBRARY */
+
+body .exercise-card {
+    background: var(--fp-card) !important;
+    border: 1px solid var(--fp-border);
+    padding: 16px !important;
+    border-radius: 18px !important;
+    box-shadow: none !important;
+    min-width: 0;
+}
+
+body .exercise-card[data-chosen="true"] {
+    border-color: var(--fp-accent) !important;
+}
+
+body .exercise-card h2,
+body .exercise-card h3 {
+    color: var(--fp-text) !important;
+    letter-spacing: -.025em;
+    line-height: 1.3;
+}
+
+body .exercise-card p {
+    color: var(--fp-muted) !important;
+    line-height: 1.65;
+}
+
+body .exercise-image-frame {
+    background: #ececf2 !important;
+    border: 1px solid #d4d5e0 !important;
+    border-radius: 12px !important;
+    aspect-ratio: 4 / 3;
+    padding: 12px;
+    overflow: hidden;
+}
+
+body .exercise-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+body .exercise-group-label,
+body .exercise-level-label {
+    background: var(--fp-soft) !important;
+    color: var(--fp-text) !important;
+    border: 0 !important;
+    padding: 6px 10px;
+    border-radius: 7px;
+}
+
+body .exercise-meta {
+    color: var(--fp-accent) !important;
+}
+
+/* EXERCISE GUIDE ACTION */
+
+body .fp-guide-action {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 13px !important;
+    width: 100% !important;
+    min-height: 64px;
+    padding: 12px 14px !important;
+    margin: 14px 0 !important;
+    background: var(--fp-soft) !important;
+    color: var(--fp-text) !important;
+    border: 1px solid var(--fp-border) !important;
+    border-radius: 12px !important;
+    text-align: left !important;
+    text-decoration: none !important;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+body .fp-guide-action:hover {
+    border-color: var(--fp-accent) !important;
+}
+
+body .fp-guide-thumbnail {
+    width: 66px;
+    height: 66px;
+    flex: 0 0 66px;
+    border-radius: 9px;
+    object-fit: contain;
+    background: #ececf2;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+body .fp-guide-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+}
+
+body .fp-guide-copy strong {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--fp-text);
+}
+
+body .fp-guide-copy small {
+    color: var(--fp-muted);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+body .fp-guide-arrow {
+    color: var(--fp-accent);
+    font-size: 23px;
+    margin-left: auto;
+}
+
+/* EXERCISE INSTRUCTION DIALOG */
+
+body .guide-dialog,
+body dialog {
+    background: var(--fp-card) !important;
+    color: var(--fp-text) !important;
+    border: 1px solid var(--fp-border) !important;
+    border-radius: 20px !important;
+    max-width: calc(100vw - 24px);
+    max-height: 88dvh;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+body dialog::backdrop {
+    background: rgba(12, 14, 23, .65);
+}
+
+body .guide-dialog h2,
+body .guide-dialog h3 {
+    color: var(--fp-text) !important;
+}
+
+body .guide-dialog p,
+body .guide-dialog li {
+    color: var(--fp-muted) !important;
+    line-height: 1.65;
+}
+
+body .guide-dialog ol li {
+    background: var(--fp-input) !important;
+    border-color: var(--fp-border) !important;
+}
+
+/* PROGRESS CHARTS */
+
+body .fp-progress-chart {
+    max-width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+body .fp-progress-chart text {
+    fill: var(--fp-muted) !important;
+    font-family: inherit !important;
+    font-size: 12px;
+}
+
+body .fp-progress-chart line {
+    stroke: var(--fp-grid) !important;
+}
+
+body .fp-progress-chart polyline {
+    stroke: var(--fp-accent) !important;
+    stroke-width: 2.5px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+body .fp-progress-chart circle {
+    fill: var(--fp-accent) !important;
+    stroke: var(--fp-card) !important;
+    stroke-width: 2px;
+}
+
+body .fp-progress-chart path[stroke]:not([stroke="none"]) {
+    stroke: var(--fp-accent) !important;
+}
+
+/* MOBILE ACCESSIBILITY */
+
+@media (max-width: 760px) {
+    body input,
+    body select,
+    body textarea {
+        font-size: 16px !important;
+    }
+
+    body .exercise-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    body .exercise-card {
+        padding: 12px !important;
+    }
+
+    body .exercise-card button {
+        min-height: 44px;
+        white-space: normal;
+    }
+
+    body .fp-guide-action {
+        padding: 10px !important;
+        gap: 10px !important;
+    }
+
+    body .fp-guide-thumbnail {
+        width: 54px;
+        height: 54px;
+        flex-basis: 54px;
+    }
+
+    body .guide-dialog {
+        padding: 16px !important;
+    }
+
+    body .set-row > *,
+    body .log-row > * {
+        min-width: 0;
+    }
+
+    body .set-row input,
+    body .log-row input {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body .exercise-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body .exercise-image-frame {
+        aspect-ratio: 16 / 10;
+    }
+
+    body .fp-guide-copy small {
+        font-size: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body button,
+    body input,
+    body select,
+    body .exercise-card,
+    body .exercise-image-frame img {
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+    }
+}

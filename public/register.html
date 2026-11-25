@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FitPath | Create account</title>
+<link rel="stylesheet" href="style.css">
+<script src="auth.js" defer></script>
+<link rel="stylesheet" href="auth.css?v=3">
+<link rel="stylesheet" href="consistency-fix.css?v=1">
+</head>
+<body class="fp-auth" data-mode="register">
+<header class="fp-header">
+  <a class="fp-brand" href="welcome.html">Fit<span>Path</span></a>
+  <div class="fp-header-actions">
+    <a href="welcome.html">Back to home</a>
+    <button id="fp-theme" class="fp-theme" type="button"
+      aria-label="Switch color theme">
+      <span class="fp-moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 15A9 9 0 0 1 9 4a9 9 0 1 0 11 11Z"/></svg></span>
+      <span class="fp-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M5 19l2-2M17 7l2-2"/></svg></span>
+    </button>
+  </div>
+</header>
+
+<main class="fp-layout">
+  
+
+  <section class="fp-form-side">
+    <div class="fp-form-wrap">
+      <div class="fp-form-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg></div>
+      <span class="fp-kicker">GET STARTED</span>
+      <h2>Create your account.</h2>
+      <p class="fp-intro">Take the first step toward a routine that works for you.</p>
+
+      <div class="fp-tabs">
+        <a href="login.html" >Sign in</a>
+        <a href="register.html" aria-current="page">Create account</a>
+      </div>
+
+      <form id="fp-form" novalidate>
+        
+  <div class="fp-field">
+    <label for="name">Full name</label>
+    <div class="fp-input">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>
+      <input id="name" name="name" type="text"
+        placeholder="Your name" autocomplete="name"
+        aria-describedby="name-error" required>
+      
+    </div>
+    <small class="fp-error" id="name-error"></small>
+  </div>
+        
+  <div class="fp-field">
+    <label for="email">Email address</label>
+    <div class="fp-input">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 7 9 6 9-6"/></svg>
+      <input id="email" name="email" type="email"
+        placeholder="you@example.com" autocomplete="email"
+        aria-describedby="email-error" required>
+      
+    </div>
+    <small class="fp-error" id="email-error"></small>
+  </div>
+        
+  <div class="fp-field">
+    <label for="password">Password</label>
+    <div class="fp-input">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+      <input id="password" name="password" type="password"
+        placeholder="At least 8 characters" autocomplete="new-password"
+        aria-describedby="password-error" required>
+      
+        <button type="button" class="fp-eye"
+          data-password="password" aria-label="Show password"
+          aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button>
+    </div>
+    <small class="fp-error" id="password-error"></small>
+  </div>
+
+        
+        <div class="fp-strength">
+          <div class="fp-strength-track"><span id="fp-strength-bar"></span></div>
+          <small id="fp-strength-label" aria-live="polite">Password strength</small>
+        </div>
+        
+  <div class="fp-field">
+    <label for="confirm">Confirm password</label>
+    <div class="fp-input">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+      <input id="confirm" name="confirm" type="password"
+        placeholder="Re-enter your password" autocomplete="new-password"
+        aria-describedby="confirm-error" required>
+      
+        <button type="button" class="fp-eye"
+          data-password="confirm" aria-label="Show password"
+          aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button>
+    </div>
+    <small class="fp-error" id="confirm-error"></small>
+  </div>
+        
+
+        <div id="fp-status" role="status" aria-live="polite"></div>
+
+        <button class="fp-submit" type="submit">
+          Create my account
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg>
+        </button>
+      </form>
+
+      <div class="fp-or"><span>or</span></div>
+
+      <a href="index.html" class="fp-guest">Continue as guest <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+
+      <p class="fp-switch"><strong>Already have an account?</strong> <a href="login.html">Sign in</a></p>
+
+      <p class="fp-disclaimer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        <span>Interactive prototype. Use sample information only.
+        No passwords are stored or sent to a server.</span>
+      </p>
+    </div>
+  </section>
+<section class="fp-showcase">
+    <div class="fp-decoration"></div>
+    <div class="fp-showcase-content">
+      <span class="fp-kicker">YOUR FITNESS JOURNEY</span>
+      <h1>Small steps.<br>Stronger you.</h1>
+      <p>Build healthier habits, discover your strength,
+      and make every workout count.</p>
+
+      <div class="fp-preview">
+        <div class="fp-preview-top">
+          <div>
+            <small>YOUR WEEKLY ACTIVITY</small>
+            <h2>Your momentum.</h2>
+          </div>
+          <span class="fp-preview-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v16h16M8 15l4-5 4 2 5-7"/></svg></span>
+        </div>
+        
+<div class="fp-activity-chart">
+  <svg viewBox="0 0 344 184"
+    role="img"
+    aria-label="Illustrative weekly activity chart showing sample workout activity">
+
+    <line class="fp-chart-grid" x1="10" y1="30" x2="334" y2="30" stroke="#ffffff" stroke-dasharray="4 5"/><line class="fp-chart-grid" x1="10" y1="60" x2="334" y2="60" stroke="#ffffff" stroke-dasharray="4 5"/><line class="fp-chart-grid" x1="10" y1="90" x2="334" y2="90" stroke="#ffffff" stroke-dasharray="4 5"/><line class="fp-chart-grid" x1="10" y1="120" x2="334" y2="120" stroke="#ffffff" stroke-dasharray="4 5"/><line class="fp-chart-grid" x1="10" y1="150" x2="334" y2="150" stroke="#ffffff" stroke-dasharray="4 5"/>
+    
+    <rect class="fp-chart-bar"
+      x="20" y="114"
+      width="28" height="36" rx="6"
+      fill="#a8add9"
+      style="--delay:0ms"/>
+    <text x="34" y="174"
+      text-anchor="middle"
+      fill="#d9dcf7" font-size="11">M</text>
+  
+    <rect class="fp-chart-bar"
+      x="66" y="87"
+      width="28" height="63" rx="6"
+      fill="#a8add9"
+      style="--delay:85ms"/>
+    <text x="80" y="174"
+      text-anchor="middle"
+      fill="#d9dcf7" font-size="11">T</text>
+  
+    <rect class="fp-chart-bar"
+      x="112" y="101"
+      width="28" height="49" rx="6"
+      fill="#a8add9"
+      style="--delay:170ms"/>
+    <text x="126" y="174"
+      text-anchor="middle"
+      fill="#d9dcf7" font-size="11">W</text>
+  
+    <rect class="fp-chart-bar"
+      x="158" y="64"
+      width="28" height="86" rx="6"
+      fill="#a8add9"
+      style="--delay:255ms"/>
+    <text x="172" y="174"
+      text-anchor="middle"
+      fill="#d9dcf7" font-size="11">T</text>
+  
+    <rect class="fp-chart-bar"
+      x="204" y="81"
+      width="28" height="69" rx="6"
+      fill="#a8add9"
+      style="--delay:340ms"/>
+    <text x="218" y="174"
+      text-anchor="middle"
+      fill="#d9dcf7" font-size="11">F</text>
+  
+    <rect class="fp-chart-bar"
+      x="250" y="42"
+      width="28" height="108" rx="6"
+      fill="#e3e5ff"
+      style="--delay:425ms"/>
+    <text x="264" y="174"
+      text-anchor="middle"
+      fill="#d9dcf7" font-size="11">S</text>
+  
+    <rect class="fp-chart-bar"
+      x="296" y="58"
+      width="28" height="92" rx="6"
+      fill="#a8add9"
+      style="--delay:510ms"/>
+    <text x="310" y="174"
+      text-anchor="middle"
+      fill="#d9dcf7" font-size="11">S</text>
+  
+
+    <path class="fp-chart-line"
+      d="M34 114 C57 114 57 87 80 87 C103 87 103 101 126 101 C149 101 149 64 172 64 C195 64 195 81 218 81 C241 81 241 42 264 42 C287 42 287 58 310 58"
+      pathLength="1"
+      fill="none"
+      stroke="#ffffff"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"/>
+
+    <circle class="fp-chart-point"
+      cx="264" cy="42" r="7"
+      fill="#ffffff" opacity=".2"/>
+
+    <circle class="fp-chart-point"
+      cx="264" cy="42" r="3.5"
+      fill="#ffffff"/>
+
+  </svg>
+</div>
+
+        <div class="fp-chart-caption">Illustrative activity preview</div>
+      </div>
+
+      <div class="fp-benefit">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 10h18"/></svg>
+        <div><strong>Train on your terms</strong>
+        <small>Build a routine around your lifestyle.</small></div>
+      </div>
+      <div class="fp-benefit">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>
+        <div><strong>Celebrate every milestone</strong>
+        <small>Track your workouts, one step at a time.</small></div>
+      </div>
+    </div>
+    <footer>YOUR TRAINING. YOUR PACE.</footer>
+  </section>
+</main>
+</body>
+</html>

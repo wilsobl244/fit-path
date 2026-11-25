@@ -24,7 +24,7 @@ if(plan){
    const exerciseIds=plan.exercises?.[day]||[];
    const card=document.createElement('article');
    card.className='day-card fitpath-day'+(active?'':' rest-card');
-   const top=document.createElement('div');top.className='fitpath-day-top';
+   card.style.setProperty('--day-accent',active?({'Glutes':'#b9a1c9','Upper Body':'#94b9b0','Lower Body':'#c9b58a','Legs':'#c9b58a','Core':'#a8b8d4','Push':'#94b9b0','Pull':'#a8b8d4'}[session.focus]||'#a8bd79'):'var(--edge)');const top=document.createElement('div');top.className='fitpath-day-top';
    const h=document.createElement('h2');h.textContent=day;
    const chip=document.createElement('span');chip.className='fitpath-day-chip';
    chip.textContent=!active?'Rest day':session.aiGenerated?'✦ Gemini AI':exerciseIds.length?'Planned':'Not planned';

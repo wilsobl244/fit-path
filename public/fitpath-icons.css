@@ -1,0 +1,30 @@
+.fp-icon{display:inline-block;width:1.15em;height:1.15em;vertical-align:-.18em;flex:none;background:currentColor;mask:var(--fp-icon) center/contain no-repeat;-webkit-mask:var(--fp-icon) center/contain no-repeat;pointer-events:none}.nav-icon .fp-icon,.mobile-tabs b .fp-icon{width:21px;height:21px}.nav-icon{display:inline-flex;align-items:center;justify-content:center}.feature-icon,.coach-spark,.fitpath-ai-icon{display:inline-flex;align-items:center;justify-content:center;color:#bfc2ee}.feature-icon{width:52px;height:52px;border-radius:14px;background:#303246;font-size:24px}.light-theme .feature-icon{background:#e8e8f3;color:#55598e}.option-card .fp-icon{color:#bfc2ee;margin-right:6px;width:23px;height:23px}.light-theme .option-card .fp-icon{color:#55598e}.theme-toggle .fp-icon,.menu-toggle .fp-icon{width:21px;height:21px}
+.fp-icon-home{--fp-icon:url("icons/home.svg")}
+.fp-icon-calendar{--fp-icon:url("icons/calendar.svg")}
+.fp-icon-sparkles{--fp-icon:url("icons/sparkles.svg")}
+.fp-icon-dumbbell{--fp-icon:url("icons/dumbbell.svg")}
+.fp-icon-clipboard{--fp-icon:url("icons/clipboard.svg")}
+.fp-icon-progress{--fp-icon:url("icons/progress.svg")}
+.fp-icon-settings{--fp-icon:url("icons/settings.svg")}
+.fp-icon-moon{--fp-icon:url("icons/moon.svg")}
+.fp-icon-sun{--fp-icon:url("icons/sun.svg")}
+.fp-icon-muscle{--fp-icon:url("icons/muscle.svg")}
+.fp-icon-strength{--fp-icon:url("icons/strength.svg")}
+.fp-icon-bolt{--fp-icon:url("icons/bolt.svg")}
+.fp-icon-leaf{--fp-icon:url("icons/leaf.svg")}
+.fp-icon-menu{--fp-icon:url("icons/menu.svg")}
+.fp-icon-arrow-right{--fp-icon:url("icons/arrow-right.svg")}
+.fp-icon-arrow-left{--fp-icon:url("icons/arrow-left.svg")}
+.fp-icon-external{--fp-icon:url("icons/external.svg")}
+.fp-icon-chevron{--fp-icon:url("icons/chevron.svg")}
+.fp-icon-check{--fp-icon:url("icons/check.svg")}
+.fp-icon-close{--fp-icon:url("icons/close.svg")}
+.fp-icon-list{--fp-icon:url("icons/list.svg")}
+body .option-card .fp-icon{display:block;position:static;width:30px;height:30px;min-height:0;padding:0;margin:0 0 4px;border:0;box-shadow:none;background:currentColor;color:var(--fp-accent,#55598e);flex:0 0 auto;vertical-align:middle}
+body .option-card > span{gap:10px;min-height:112px}
+body .days-grid .option-card > span{min-height:54px}
+body .theme-toggle,body .menu-toggle{place-items:center;padding:0!important;line-height:1;box-sizing:border-box;min-width:44px;min-height:44px}
+body .theme-toggle .fp-icon,body .menu-toggle .fp-icon{display:block;margin:0;width:22px;height:22px;vertical-align:middle}
+body .feature-icon,body .coach-spark,body .fitpath-ai-icon{color:var(--fp-accent,#55598e);background:var(--fp-soft,#e8e8f3)}
+body .nav-icon .fp-icon,body .mobile-tabs .fp-icon{display:block;vertical-align:middle}
+@media(max-width:760px){body .option-grid .option-card > span{min-height:70px;flex-direction:row;gap:12px;padding:12px 34px 12px 12px}body .option-card .fp-icon{width:25px;height:25px;margin:0}body .days-grid .option-card > span{min-height:52px}}
